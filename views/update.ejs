@@ -1,0 +1,129 @@
+<style>
+   
+
+.box{
+    width:475px;
+    padding: 40px;
+    position:absolute;
+    top:60%;
+    left:50%;
+    transform: translate(-50%,-60%);
+    background: white;
+     border-radius: 10px;
+     float: center;
+}
+
+
+
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="tecky.js"></script>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<style>
+	body {
+background-color: rgb(107, 227, 231);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+.cont{
+	text-align: left;
+}
+.he{
+	font-size: 25px;
+	position: relative;
+  text-align: center;
+  color: black;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4ca0af;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #148386;
+}
+
+</style>
+<body>
+
+
+<form class="box" action="/edit" method="post">
+	<div class="cont" style="float: top ; font-family: Comic Sans MS, cursive, sans-serif;">
+		<div class="he">
+		
+  <div class="centered"><b>Update Info</b></div>
+    
+    </div>
+
+<br/>
+      &nbsp;
+    <br/>
+    <label >Name</label>
+        <input type="text" id="name" name="name" placeholder="Your fullname.." required value="<%= (locals.old_data) ? old_data.name : ''; %>">
+
+        <label >Number</label>
+        <input type="text" id="number"  name="number" placeholder="Your number.." required value="<%= (locals.old_data) ? old_data.number : ''; %>">
+
+
+<br/>
+      &nbsp;
+    <br/>
+        <label for="subject">Address</label>
+        <textarea id="address"  name="address" placeholder="Your address.." style="height:170px" required value="<%= (locals.old_data) ? old_data.address : ''; %>" ></textarea>
+        <input name="submit" type="submit" id="submit_btn" value="Submit">
+
+  </div>
+</form>
+
+
+
+</div>
+
+
+</body>
+</html>
